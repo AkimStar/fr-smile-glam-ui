@@ -44,9 +44,9 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={item.href}
-              whileHover={{ scale: 1.08, color: '#38bdf8' }}
+              whileHover={{ scale: 1.08 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="text-white font-medium hover:text-fr-blue transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-fr-blue after:transition-all after:duration-300"
+              className="text-fr-blue font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:rounded-full hover:after:h-0.5 hover:after:w-full"
             >
               {item.name}
             </motion.a>

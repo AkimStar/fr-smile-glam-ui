@@ -20,7 +20,7 @@ const testimonials = [
     id: 3,
     content: "Професионално обслужване с внимание към детайла. Чувствах се спокойна през цялото време.",
     author: "Елена",
-    rating: 4,
+    rating: 5,
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop"
   },
   {

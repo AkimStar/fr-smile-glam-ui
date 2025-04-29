@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Stethoscope, User, Heart, Baby } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -43,61 +43,99 @@ const ServicesSection = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">
             Нашите Услуги
           </span>
-          <h2 className="heading-lg text-fr-blue">Професионални дентални услуги</h2>
-          <p className="text-lg text-fr-darkText/70 max-w-2xl mx-auto mt-4">
+          <motion.h2
+            className="heading-lg text-fr-blue"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            Професионални дентални услуги
+          </motion.h2>
+          <motion.p
+            className="text-lg text-fr-darkText/70 max-w-2xl mx-auto mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Предлагаме широк спектър от дентални услуги, използвайки най-съвременните технологии и техники.
-          </p>
+          </motion.p>
         </div>
         
         {/* Service Icons - Centered */}
-        <div className="flex justify-center gap-8 mb-16 flex-wrap">
-          {services.map((service) => (
-            <div 
-              key={`icon-${service.id}`} 
+        <motion.div
+          className="flex justify-center gap-8 mb-16 flex-wrap"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } }
+          }}
+        >
+          {services.map((service, i) => (
+            <motion.div
+              key={`icon-${service.id}`}
               className="flex flex-col items-center gap-2 px-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
+              whileHover={{ scale: 1.08 }}
             >
               <div className="rounded-full p-5 bg-fr-blue/10 mb-2">
                 {service.icon}
               </div>
               <h3 className="text-center text-lg font-semibold text-fr-blue">{service.title}</h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
         {/* Service Cards - 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service) => (
-            <Card 
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.18 } }
+          }}
+        >
+          {services.map((service, i) => (
+            <motion.div
               key={`card-${service.id}`}
-              className="overflow-hidden border border-gray-100 shadow-md hover:shadow-lg transition-all"
+              className="h-full"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 * i }}
+              whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-fr-blue">
-                  {service.icon}
-                  <span>{service.title}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-fr-darkText/80">{service.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                  variant="outline" 
-                  className="mt-2 rounded-full border-fr-blue/30 text-fr-blue hover:bg-fr-blue hover:text-white"
-                >
-                  Научете повече <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardFooter>
-            </Card>
+              <Card 
+                className="overflow-hidden border border-gray-100 shadow-md hover:shadow-lg transition-all h-full"
+              >
+                <div className="h-64 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-fr-blue">
+                    {service.icon}
+                    <span>{service.title}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-fr-darkText/80">{service.description} {service.id === "01" && "Този процес е напълно индивидуален и съобразен с вашите нужди."}{service.id === "02" && "Използваме най-новите техники за постигане на естествена красота."}{service.id === "03" && "Нашият екип се грижи за вашето удобство и дълготраен резултат."}{service.id === "04" && "Децата се чувстват спокойни и обгрижени при нас."}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

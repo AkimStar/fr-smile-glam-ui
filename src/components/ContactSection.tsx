@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   return (
@@ -9,15 +9,36 @@ const ContactSection = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">
             Контакти
           </span>
-          <h2 className="heading-lg text-fr-blue mb-3">Свържете се с нас</h2>
-          <p className="text-lg text-fr-darkText/70 max-w-2xl mx-auto">
+          <motion.h2
+            className="heading-lg text-fr-blue mb-3"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            Свържете се с нас
+          </motion.h2>
+          <motion.p
+            className="text-lg text-fr-darkText/70 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             Имате въпрос или искате да запазите час? Не се колебайте да се свържете с нас!
-          </p>
+          </motion.p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Info */}
-          <div className="glass-card p-8">
+          <motion.div
+            className="glass-card p-8"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
+          >
             <h3 className="heading-sm text-fr-blue mb-8 text-left">Информация за контакт</h3>
             
             <div className="space-y-8">
@@ -29,7 +50,7 @@ const ContactSection = () => {
                 </div>
                 <div className="text-left">
                   <p className="font-semibold text-fr-darkText">Телефон:</p>
-                  <p className="text-fr-darkText/80">+359 888 123 456</p>
+                  <p className="text-fr-darkText/80">+359 876 146 960</p>
                 </div>
               </div>
               
@@ -82,13 +103,20 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* Google Maps */}
-          <div className="glass-card p-2 rounded-lg overflow-hidden h-full min-h-[450px]">
+          <motion.div
+            className="glass-card p-2 rounded-lg overflow-hidden h-full min-h-[450px]"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
+          >
             <iframe 
               title="FR Smile location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46061.15354400949!2d27.228603056592843!3d44.11690074326771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40af8452be61c315%3A0x572c9aaef48e9c7!2z0KHQuNC70LjRgdGC0YDQsCwg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1719706979579!5m2!1sbg!2sbg" 
+              src="https://www.google.com/maps?q=Център,+бул.+„Македония“+56,+7500+Силистра&output=embed"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -96,7 +124,7 @@ const ContactSection = () => {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

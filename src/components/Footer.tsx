@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Facebook, Instagram, Tv, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,7 +12,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#f5f5f5] to-fr-blue text-fr-blue">
+    <motion.footer
+      className="bg-gradient-to-b from-[#f5f5f5] to-fr-blue text-fr-blue"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Back to top button */}
       <div className="container mx-auto px-6 relative">
         <div className="flex justify-center">
@@ -31,17 +37,19 @@ const Footer = () => {
           {/* Brand and CTA */}
           <div className="lg:col-span-5">
             <div className="mb-4">
-              <img src="https://i.ibb.co/fVSqpnk/FR-SMILE-filled-transparent.png" alt="FR Smile Logo" className="h-16" />
+              <img src="/logo.png" alt="FR Smile Logo" className="h-16" />
             </div>
             <p className="mb-8 text-lg opacity-90 max-w-md">
               Осветете вашата усмивка с увереност и грижа. Доверете се на нас за професионална дентална грижа.
             </p>
-            <Button 
-              className="bg-white text-fr-blue hover:bg-white/90 rounded-full"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Запазете час
-            </Button>
+            <motion.div whileHover={{ scale: 1.08 }} transition={{ type: 'spring', stiffness: 300 }}>
+              <Button 
+                className="bg-white text-fr-blue hover:bg-white/90 rounded-full"
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Запазете час
+              </Button>
+            </motion.div>
           </div>
           
           {/* Quick Links */}
@@ -49,34 +57,34 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 border-b border-white/20 pb-2">Меню</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#hero" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#hero" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   Начало
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#about" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   За нас
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#services" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   Услуги
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a href="#experts" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#experts" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   Специалисти
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#testimonials" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   Отзиви
-                </a>
+                </motion.a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors inline-block py-1">
+                <motion.a href="#contact" whileHover={{ scale: 1.08, color: '#fff' }} className="hover:text-white transition-colors inline-block py-1">
                   Контакти
-                </a>
+                </motion.a>
               </li>
             </ul>
           </div>
@@ -86,40 +94,43 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 border-b border-white/20 pb-2">Контакти</h3>
             <p className="mb-2 flex items-center">
               <span className="opacity-70 mr-2">Имейл:</span> 
-              <a href="mailto:hello@frsmile.bg" className="hover:text-white transition-colors">
-                hello@frsmile.bg
+              <a href="mailto:info@frsmile.com" className="hover:text-white transition-colors">
+                info@frsmile.com
               </a>
             </p>
             <p className="mb-6 flex items-center">
               <span className="opacity-70 mr-2">Телефон:</span> 
-              <a href="tel:+359888123456" className="hover:text-white transition-colors">
-                +359 888 123 456
+              <a href="tel:+359876146960" className="hover:text-white transition-colors">
+              +359 876 146 960
               </a>
             </p>
             
             <h3 className="text-lg font-semibold mb-4">Последвайте ни</h3>
             <div className="flex space-x-4">
-              <a 
+              <motion.a 
                 href="#" 
                 aria-label="Instagram" 
+                whileHover={{ scale: 1.15, backgroundColor: '#fff', color: '#2563eb' }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-fr-blue transition-all duration-300"
               >
                 <Instagram size={18} />
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
                 aria-label="Facebook" 
+                whileHover={{ scale: 1.15, backgroundColor: '#fff', color: '#2563eb' }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-fr-blue transition-all duration-300"
               >
                 <Facebook size={18} />
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
                 aria-label="TikTok" 
+                whileHover={{ scale: 1.15, backgroundColor: '#fff', color: '#2563eb' }}
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-fr-blue transition-all duration-300"
               >
                 <Tv size={18} />
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
@@ -132,16 +143,16 @@ const Footer = () => {
             © 2025, FR Smile — Всички права запазени
           </p>
           <div className="flex space-x-6 text-sm opacity-75">
-            <a href="#" className="hover:text-fr-accentHover transition-colors">
+            <motion.a href="#" whileHover={{ scale: 1.08, color: '#38bdf8' }} className="hover:text-fr-accentHover transition-colors">
               Политика за поверителност
-            </a>
-            <a href="#" className="hover:text-fr-accentHover transition-colors">
+            </motion.a>
+            <motion.a href="#" whileHover={{ scale: 1.08, color: '#38bdf8' }} className="hover:text-fr-accentHover transition-colors">
               Общи условия
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

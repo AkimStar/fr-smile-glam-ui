@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const navItems = [
   { name: 'Начало', href: '#hero' },
@@ -25,34 +25,41 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
+    <motion.nav
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'py-2 glass shadow-lg' : 'py-5 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#hero" className="flex items-center">
-          <img src="https://i.ibb.co/fVSqpnk/FR-SMILE-filled-transparent.png" alt="FR Smile Logo" className="h-12" />
+          <img src="/logo.png" alt="FR Smile Logo" className="h-12" />
         </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
-            <a
+            <motion.a
               key={item.name}
               href={item.href}
-              className="text-fr-darkText font-medium hover:text-fr-blue transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-fr-blue after:transition-all after:duration-300"
+              whileHover={{ scale: 1.08, color: '#38bdf8' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="text-white font-medium hover:text-fr-blue transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-fr-blue after:transition-all after:duration-300"
             >
               {item.name}
-            </a>
+            </motion.a>
           ))}
         </div>
 
         {/* Contact Button (Desktop) */}
         <div className="hidden md:block">
-          <Button variant="default" className="btn-primary rounded-full">
-            Контакт
-          </Button>
+          <motion.div whileHover={{ scale: 1.08 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <Button variant="default" className="btn-primary rounded-full text-white">
+              Запази час
+            </Button>
+          </motion.div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -88,7 +95,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

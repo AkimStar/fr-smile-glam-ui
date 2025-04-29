@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-white to-fr-blue text-fr-blue">
+    <footer className="bg-gradient-to-b from-fr-lightGray to-fr-blue text-fr-blue">
       {/* Back to top button */}
       <div className="container mx-auto px-6 relative">
         <div className="flex justify-center">

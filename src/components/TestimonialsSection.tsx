@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="relative h-[600px] md:h-[650px] flex items-center justify-center">
+        <div className="relative h-[400px] md:h-[450px] flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-fr-lightGray/30 via-transparent to-fr-lightGray/30 rounded-3xl"></div>
           
           {testimonials.map((testimonial, index) => {
@@ -76,12 +76,12 @@ const TestimonialsSection = () => {
             return (
               <div
                 key={testimonial.id}
-                className={`glass-card absolute top-0 p-8 w-[280px] md:w-[320px] h-[500px] md:h-[570px] transition-all duration-500 ${positionClass} cursor-pointer`}
+                className={`glass-card absolute top-0 p-8 w-[400px] md:w-[600px] h-[300px] md:h-[350px] transition-all duration-500 ${positionClass} cursor-pointer`}
                 onClick={() => setActiveIndex(index)}
               >
                 <div className="flex flex-col h-full">
                   <div className="mb-6 flex justify-center">
-                    <div className="w-24 h-24 rounded-full overflow-hidden">
+                    <div className="w-20 h-20 rounded-full overflow-hidden">
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.author} 

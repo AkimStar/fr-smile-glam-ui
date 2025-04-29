@@ -1,37 +1,7 @@
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight } from 'lucide-react';
-import { toast } from "sonner";
+import React from 'react';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real app, you would send the form data to a server
-    console.log(formData);
-    toast.success("Съобщението е изпратено успешно!");
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-  };
-
   return (
     <section id="contact" className="section-padding bg-fr-lightGray">
       <div className="container mx-auto">
@@ -46,124 +16,86 @@ const ContactSection = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Form */}
+          {/* Contact Info */}
           <div className="glass-card p-8">
-            <h3 className="heading-sm text-fr-blue mb-6">Изпратете съобщение</h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-fr-darkText/80">Име</label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
-                  required
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-fr-darkText/80">Имейл</label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
-                    required
-                  />
+            <h3 className="heading-sm text-fr-blue mb-8 text-left">Информация за контакт</h3>
+            
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                 </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-fr-darkText/80">Телефон</label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
-                    required
-                  />
+                <div className="text-left">
+                  <p className="font-semibold text-fr-darkText">Телефон:</p>
+                  <p className="text-fr-darkText/80">+359 888 123 456</p>
                 </div>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-fr-darkText/80">Съобщение</label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
-                  required
-                />
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-fr-darkText">Имейл:</p>
+                  <p className="text-fr-darkText/80">hello@frsmile.bg</p>
+                </div>
               </div>
-              <Button 
-                type="submit" 
-                className="btn-primary rounded-full"
-              >
-                Изпратете <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-fr-darkText">Адрес:</p>
+                  <p className="text-fr-darkText/80">Център, бул. „Македония" 56, 7500 Силистра</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-fr-darkText">Работно време:</p>
+                  <p className="text-fr-darkText/80">Понеделник – Петък, 08:00 – 19:00</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-fr-darkText">Запазване на час:</p>
+                  <p className="text-fr-darkText/80">Обадете ни се на телефона или ни пишете на имейл</p>
+                </div>
+              </div>
+            </div>
           </div>
           
-          {/* Contact Info and Map */}
-          <div>
-            <div className="glass-card p-8 mb-6">
-              <h3 className="heading-sm text-fr-blue mb-6">Информация за контакт</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-fr-darkText">Телефон:</p>
-                    <p className="text-fr-darkText/80">+359 888 123 456</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-fr-darkText">Адрес:</p>
-                    <p className="text-fr-darkText/80">Център, бул. „Македония" 56, 7500 Силистра</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-fr-darkText">Работно време:</p>
-                    <p className="text-fr-darkText/80">Понеделник – Петък, 08:00 – 19:00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glass-card p-2 rounded-lg overflow-hidden h-80">
-              <iframe 
-                title="FR Smile location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46061.15354400949!2d27.228603056592843!3d44.11690074326771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40af8452be61c315%3A0x572c9aaef48e9c7!2z0KHQuNC70LjRgdGC0YDQsCwg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sru!2sus!4v1719706979579!5m2!1sru!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+          {/* Google Maps */}
+          <div className="glass-card p-2 rounded-lg overflow-hidden h-full min-h-[450px]">
+            <iframe 
+              title="FR Smile location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46061.15354400949!2d27.228603056592843!3d44.11690074326771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40af8452be61c315%3A0x572c9aaef48e9c7!2z0KHQuNC70LjRgdGC0YDQsCwg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1719706979579!5m2!1sbg!2sbg" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

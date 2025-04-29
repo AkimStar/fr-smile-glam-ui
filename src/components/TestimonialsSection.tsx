@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="relative h-[400px] md:h-[300px] flex items-center justify-center">
+        <div className="relative h-[600px] md:h-[650px] flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-fr-lightGray/30 via-transparent to-fr-lightGray/30 rounded-3xl"></div>
           
           {testimonials.map((testimonial, index) => {
@@ -76,22 +76,24 @@ const TestimonialsSection = () => {
             return (
               <div
                 key={testimonial.id}
-                className={`glass-card absolute top-0 p-8 md:p-10 w-[90%] md:w-[80%] max-w-2xl transition-all duration-500 ${positionClass} cursor-pointer`}
+                className={`glass-card absolute top-0 p-8 w-[280px] md:w-[320px] h-[500px] md:h-[570px] transition-all duration-500 ${positionClass} cursor-pointer`}
                 onClick={() => setActiveIndex(index)}
               >
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                  <div className="w-20 h-20 rounded-full overflow-hidden shrink-0">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.author} 
-                      className="w-full h-full object-cover"
-                    />
+                <div className="flex flex-col h-full">
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.author} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-lg md:text-xl font-playfair italic mb-4">"{testimonial.content}"</p>
-                    <div className="flex flex-col md:flex-row md:items-center justify-between">
-                      <p className="font-semibold text-lg text-fr-blue">{testimonial.author}</p>
-                      <div className="flex mt-2 md:mt-0">
+                  <div className="flex-grow flex flex-col">
+                    <p className="text-lg md:text-xl font-playfair italic mb-6 flex-grow">"{testimonial.content}"</p>
+                    <div className="mt-auto">
+                      <p className="font-semibold text-lg text-fr-blue text-center mb-2">{testimonial.author}</p>
+                      <div className="flex justify-center">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <span key={i} className={i < testimonial.rating ? "text-yellow-500" : "text-gray-300"}>
                             ★

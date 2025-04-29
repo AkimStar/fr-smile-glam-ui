@@ -12,12 +12,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-fr-blue text-white">
+    <footer className="bg-gradient-to-b from-white to-fr-blue text-fr-blue">
       {/* Back to top button */}
       <div className="container mx-auto px-6 relative">
         <div className="flex justify-center">
           <Button 
-            className="absolute -top-6 bg-white text-fr-blue hover:bg-white/90 w-12 h-12 rounded-full p-0"
+            className="absolute -top-6 bg-white text-fr-blue hover:bg-white/90 w-12 h-12 rounded-full p-0 shadow-md"
             onClick={scrollToTop}
           >
             <ArrowUp size={20} />
@@ -47,32 +47,32 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 border-b border-white/20 pb-2">Меню</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#hero" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#hero" className="hover:text-white transition-colors inline-block py-1">
                   Начало
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#about" className="hover:text-white transition-colors inline-block py-1">
                   За нас
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#services" className="hover:text-white transition-colors inline-block py-1">
                   Услуги
                 </a>
               </li>
               <li>
-                <a href="#experts" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#experts" className="hover:text-white transition-colors inline-block py-1">
                   Специалисти
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#testimonials" className="hover:text-white transition-colors inline-block py-1">
                   Отзиви
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-fr-accentHover transition-colors inline-block py-1">
+                <a href="#contact" className="hover:text-white transition-colors inline-block py-1">
                   Контакти
                 </a>
               </li>
@@ -84,13 +84,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 border-b border-white/20 pb-2">Контакти</h3>
             <p className="mb-2 flex items-center">
               <span className="opacity-70 mr-2">Имейл:</span> 
-              <a href="mailto:hello@frsmile.bg" className="hover:text-fr-accentHover transition-colors">
+              <a href="mailto:hello@frsmile.bg" className="hover:text-white transition-colors">
                 hello@frsmile.bg
               </a>
             </p>
             <p className="mb-6 flex items-center">
               <span className="opacity-70 mr-2">Телефон:</span> 
-              <a href="tel:+359888123456" className="hover:text-fr-accentHover transition-colors">
+              <a href="tel:+359888123456" className="hover:text-white transition-colors">
                 +359 888 123 456
               </a>
             </p>
@@ -124,7 +124,7 @@ const Footer = () => {
       </div>
       
       {/* Copyright Footer */}
-      <div className="border-t border-white/10 py-6">
+      <div className="border-t border-white/10 py-6 bg-fr-blue text-white">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm opacity-75 mb-4 md:mb-0">
             © 2025, FR Smile — Всички права запазени

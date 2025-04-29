@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -32,49 +33,64 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding bg-white section-divider">
       <div className="container mx-auto">
-        <h2 className="heading-lg text-fr-blue mb-12 text-center">Нашите услуги</h2>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">
+            Нашите Услуги
+          </span>
+          <h2 className="heading-lg text-fr-blue">Професионални дентални услуги</h2>
+          <p className="text-lg text-fr-darkText/70 max-w-2xl mx-auto mt-4">
+            Предлагаме широк спектър от дентални услуги, използвайки най-съвременните технологии и техники.
+          </p>
+        </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Services List */}
-          <div className="space-y-8">
+          <div className="lg:col-span-4 space-y-10">
             {services.map((service) => (
-              <div key={service.id} className="flex items-start">
-                <span className="text-2xl md:text-3xl font-playfair font-bold text-fr-blue mr-6">{service.id}</span>
+              <div key={service.id} 
+                className={`flex items-start transition-all duration-300 p-4 rounded-lg hover:glass-card cursor-pointer ${
+                  service.highlight ? 'glass-card' : ''
+                }`}
+              >
+                <span className="text-3xl md:text-4xl font-playfair font-bold text-fr-blue mr-6">{service.id}</span>
                 <div>
-                  <h3 className="text-xl md:text-2xl font-playfair font-semibold mb-2">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-playfair font-semibold mb-3">{service.title}</h3>
                   <div className="h-0.5 w-16 bg-fr-blue/30 mb-4"></div>
+                  <p className="text-fr-darkText/80">{service.description}</p>
                 </div>
               </div>
             ))}
           </div>
           
           {/* Services Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service) => (
               <div 
-                key={service.id}
-                className={`glass-card p-5 flex flex-col ${
+                key={`card-${service.id}`}
+                className={`glass-card overflow-hidden ${
                   service.highlight 
                     ? 'md:col-span-2 bg-white/30 border-fr-blue/30' 
                     : ''
                 }`}
               >
-                <div className="h-40 mb-4 overflow-hidden rounded-lg">
+                <div className="h-52 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                <h3 className="heading-sm mb-2">{service.title}</h3>
-                <p className="text-fr-darkText/80 mb-4">{service.description}</p>
-                {service.highlight && (
-                  <Button variant="outline" className="mt-auto self-start border-fr-blue text-fr-blue hover:bg-fr-accentHover">
-                    Научете повече
-                  </Button>
-                )}
+                <div className="p-5">
+                  <h3 className="heading-sm mb-3">{service.title}</h3>
+                  <p className="text-fr-darkText/80 mb-4">{service.description}</p>
+                  {service.highlight && (
+                    <Button variant="outline" className="mt-2 btn-outline rounded-full">
+                      Научете повече <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  )}
+                </div>
               </div>
             ))}
           </div>

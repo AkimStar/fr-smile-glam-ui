@@ -35,60 +35,72 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section-padding bg-fr-lightGray">
       <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">
+            Контакти
+          </span>
+          <h2 className="heading-lg text-fr-blue mb-3">Свържете се с нас</h2>
+          <p className="text-lg text-fr-darkText/70 max-w-2xl mx-auto">
+            Имате въпрос или искате да запазите час? Не се колебайте да се свържете с нас!
+          </p>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
-          <div>
-            <h2 className="heading-lg text-fr-blue mb-6">Свържете се с нас</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="glass-card p-8">
+            <h3 className="heading-sm text-fr-blue mb-6">Изпратете съобщение</h3>
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">Име</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-fr-darkText/80">Име</label>
                 <Input
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full glass border-fr-blue/20 focus:border-fr-blue"
+                  className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
                   required
                 />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">Имейл</label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full glass border-fr-blue/20 focus:border-fr-blue"
-                  required
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-fr-darkText/80">Имейл</label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-fr-darkText/80">Телефон</label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
+                    required
+                  />
+                </div>
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-1">Телефон</label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full glass border-fr-blue/20 focus:border-fr-blue"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">Съобщение</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-fr-darkText/80">Съобщение</label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full glass border-fr-blue/20 focus:border-fr-blue"
+                  className="w-full bg-white/50 border-fr-blue/20 focus:border-fr-blue focus:ring-1 focus:ring-fr-blue/30"
                   required
                 />
               </div>
               <Button 
                 type="submit" 
-                className="bg-fr-blue hover:bg-fr-blue/80 text-white"
+                className="btn-primary rounded-full"
               >
                 Изпратете <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -96,25 +108,51 @@ const ContactSection = () => {
           </div>
           
           {/* Contact Info and Map */}
-          <div className="glass-card p-6 lg:p-8">
-            <h3 className="heading-sm mb-6">Информация за контакт</h3>
-            
-            <div className="space-y-4 mb-8">
-              <div>
-                <p className="font-semibold">Телефон:</p>
-                <p className="text-fr-darkText/80">+359 888 123 456</p>
-              </div>
-              <div>
-                <p className="font-semibold">Адрес:</p>
-                <p className="text-fr-darkText/80">Център, бул. „Македония" 56, 7500 Силистра</p>
-              </div>
-              <div>
-                <p className="font-semibold">Работно време:</p>
-                <p className="text-fr-darkText/80">Понеделник – Петък, 08:00 – 19:00</p>
+          <div>
+            <div className="glass-card p-8 mb-6">
+              <h3 className="heading-sm text-fr-blue mb-6">Информация за контакт</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-fr-darkText">Телефон:</p>
+                    <p className="text-fr-darkText/80">+359 888 123 456</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-fr-darkText">Адрес:</p>
+                    <p className="text-fr-darkText/80">Център, бул. „Македония" 56, 7500 Силистра</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-fr-blue/10 flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5 text-fr-blue">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-fr-darkText">Работно време:</p>
+                    <p className="text-fr-darkText/80">Понеделник – Петък, 08:00 – 19:00</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="w-full h-64 rounded-lg overflow-hidden border border-fr-blue/20">
+            <div className="glass-card p-2 rounded-lg overflow-hidden h-80">
               <iframe 
                 title="FR Smile location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46061.15354400949!2d27.228603056592843!3d44.11690074326771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40af8452be61c315%3A0x572c9aaef48e9c7!2z0KHQuNC70LjRgdGC0YDQsCwg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sru!2sus!4v1719706979579!5m2!1sru!2sus" 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, TiktokIcon } from 'lucide-react';
+import { Facebook, Instagram, Tv } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a href="#" aria-label="TikTok" className="hover:text-fr-accentHover transition-colors">
-                <TiktokIcon size={20} />
+                <Tv size={20} />
               </a>
             </div>
           </div>

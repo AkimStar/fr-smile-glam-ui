@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-fr-lightGray to-fr-blue text-fr-blue">
+    <footer className="bg-gradient-to-b from-[#f5f5f5] to-fr-blue text-fr-blue">
       {/* Back to top button */}
       <div className="container mx-auto px-6 relative">
         <div className="flex justify-center">
@@ -30,7 +30,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand and CTA */}
           <div className="lg:col-span-5">
-            <h2 className="font-playfair text-3xl font-bold italic mb-4">FR Smile</h2>
+            <div className="mb-4">
+              <img src="https://i.ibb.co/fVSqpnk/FR-SMILE-filled-transparent.png" alt="FR Smile Logo" className="h-16" />
+            </div>
             <p className="mb-8 text-lg opacity-90 max-w-md">
               Осветете вашата усмивка с увереност и грижа. Доверете се на нас за професионална дентална грижа.
             </p>

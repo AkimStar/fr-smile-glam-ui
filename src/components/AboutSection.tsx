@@ -48,7 +48,7 @@ const AboutSection = () => {
             </div>
             <div className="glass-card p-2 h-64 mt-8 md:mt-16 animate-float" style={{animationDelay: '0.3s'}}>
               <img 
-                src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?q=80&w=1974&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Smiling patient" 
                 className="w-full h-full object-cover rounded-lg"
               />

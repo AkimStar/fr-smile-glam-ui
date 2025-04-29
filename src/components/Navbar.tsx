@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#hero" className="flex items-center">
-          <span className="text-fr-blue font-playfair text-2xl font-bold italic">FR Smile</span>
+          <img src="https://i.ibb.co/fVSqpnk/FR-SMILE-filled-transparent.png" alt="FR Smile Logo" className="h-12" />
         </a>
 
         {/* Desktop Navigation */}

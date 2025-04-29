@@ -16,21 +16,21 @@ const services = [
     id: "02",
     title: "Козметична стоматология",
     description: "Подобряване на природната красота на вашите зъби, като същевременно се запазва тяхното здраве и функция.",
-    image: "https://images.unsplash.com/photo-1643228995868-bf698f67d053?q=80&w=2070&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1682097288491-7e926a30cd0b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: <User className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "03",
     title: "Възстановителна стоматология",
     description: "Възвръщане на здравето и функцията на увредените зъби.",
-    image: "https://images.unsplash.com/photo-1609840112990-4265448268d1?q=80&w=2070&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1674998790004-1c08a997011c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: <Heart className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "04",
     title: "Детска стоматология",
     description: "Грижа за усмивките на най-малките пациенти с внимание и нежност.",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1770&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1661694196873-034c03440de6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: <Baby className="h-6 w-6 text-fr-blue" />
   }
 ];

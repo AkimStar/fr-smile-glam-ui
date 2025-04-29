@@ -9,7 +9,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1606265752439-1f67f9f96aa5?q=80&w=2000&auto=format&fit=crop"
+          src="https://i.ibb.co/VcQgh65/IMG-0310.jpg"
           alt="Woman with beautiful smile"
           className="w-full h-full object-cover object-top"
         />
@@ -23,7 +23,7 @@ const HeroSection = () => {
             Дентална клиника FR Smile
           </span>
           <h1 className="heading-xl text-fr-blue mb-6">
-            Грижа за вашата <span className="italic text-fr-blue">усмивка</span>, едно посещение в даден момент.
+            Грижа за вашата <span className="italic text-fr-blue">усмивка</span>, гарантирани решения.
           </h1>
           <p className="text-lg mb-8 text-fr-darkText/90">
             Вашата усмивка е израз на увереност, здраве и щастие. Доверете се на нашия професионален екип за перфектен резултат.

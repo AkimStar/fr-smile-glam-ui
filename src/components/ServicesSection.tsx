@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Tooth, Toothbrush } from 'lucide-react';
+import { ArrowRight, Stethoscope, User, Heart, Baby } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
@@ -10,7 +10,7 @@ const services = [
     title: "Ортодонтия",
     description: "Перфектно подреждане на зъбите за красива и функционална захапка.",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop",
-    icon: <Tooth className="h-6 w-6 text-fr-blue" />
+    icon: <Stethoscope className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "02",
@@ -18,21 +18,21 @@ const services = [
     description: "Подобряване на природната красота на вашите зъби, като същевременно се запазва тяхното здраве и функция.",
     image: "https://images.unsplash.com/photo-1643228995868-bf698f67d053?q=80&w=2070&auto=format&fit=crop",
     highlight: true,
-    icon: <Toothbrush className="h-6 w-6 text-fr-blue" />
+    icon: <User className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "03",
     title: "Възстановителна стоматология",
     description: "Възвръщане на здравето и функцията на увредените зъби.",
     image: "https://images.unsplash.com/photo-1609840112990-4265448268d1?q=80&w=2070&auto=format&fit=crop",
-    icon: <Tooth className="h-6 w-6 text-fr-blue" />
+    icon: <Heart className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "04",
     title: "Детска стоматология",
     description: "Грижа за усмивките на най-малките пациенти с внимание и нежност.",
     image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1770&auto=format&fit=crop",
-    icon: <Toothbrush className="h-6 w-6 text-fr-blue" />
+    icon: <Baby className="h-6 w-6 text-fr-blue" />
   }
 ];
 
@@ -53,22 +53,22 @@ const ServicesSection = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Services List */}
+          {/* Services List - Left Side */}
           <div className="lg:col-span-4">
-            <div className="sticky top-24 space-y-4">
-              <h3 className="text-xl font-medium mb-6 text-fr-blue/80">Всички услуги</h3>
+            <div className="sticky top-24 space-y-4 bg-white/50 p-6 rounded-xl shadow-sm">
+              <h3 className="text-xl font-medium mb-6 text-fr-blue">Всички услуги</h3>
               
               {services.map((service) => (
                 <div 
                   key={service.id} 
                   className={`flex items-center gap-4 p-4 rounded-lg cursor-pointer transition-all duration-300 ${
                     activeService === service.id 
-                      ? 'glass-card' 
-                      : 'hover:bg-white/10'
+                      ? 'bg-fr-blue/10 shadow-md' 
+                      : 'hover:bg-fr-blue/5'
                   }`}
                   onClick={() => setActiveService(service.id)}
                 >
-                  <div className={`rounded-full p-3 ${activeService === service.id ? 'bg-fr-blue/10' : 'bg-gray-100'}`}>
+                  <div className={`rounded-full p-3 ${activeService === service.id ? 'bg-fr-blue/20' : 'bg-gray-100'}`}>
                     {service.icon}
                   </div>
                   
@@ -86,42 +86,84 @@ const ServicesSection = () => {
             </div>
           </div>
           
-          {/* Service Details */}
+          {/* Service Details - Right Side */}
           <div className="lg:col-span-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {services.map((service) => (
-                <Card 
-                  key={`card-${service.id}`}
-                  className={`overflow-hidden border-0 shadow-lg ${
-                    service.id === activeService
-                      ? 'ring-2 ring-fr-blue/30 md:col-span-2 transform scale-100'
-                      : 'opacity-80 scale-95 hover:opacity-100 hover:scale-100 transition-all'
-                  } ${service.highlight && service.id === activeService ? 'md:col-span-2' : ''}`}
-                >
-                  <div className="h-52 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      {service.icon}
-                      <span>{service.title}</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-fr-darkText/80">{service.description}</p>
-                  </CardContent>
-                  <CardFooter>
-                    {service.highlight && (
-                      <Button variant="outline" className="mt-2 btn-outline rounded-full">
+              {services
+                .filter(service => service.id === activeService || service.highlight)
+                .map((service) => (
+                  <Card 
+                    key={`card-${service.id}`}
+                    className={`overflow-hidden border border-gray-100 shadow-md hover:shadow-lg transition-all ${
+                      service.id === activeService
+                        ? 'ring-2 ring-fr-blue/30 transform scale-100'
+                        : 'opacity-90 scale-95 hover:opacity-100 hover:scale-100'
+                    } ${service.highlight && service.id === activeService ? 'md:col-span-2' : ''}`}
+                  >
+                    <div className="h-64 overflow-hidden">
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2 text-fr-blue">
+                        {service.icon}
+                        <span>{service.title}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-fr-darkText/80">{service.description}</p>
+                    </CardContent>
+                    <CardFooter>
+                      <Button 
+                        variant="outline" 
+                        className="mt-2 rounded-full border-fr-blue/30 text-fr-blue hover:bg-fr-blue hover:text-white"
+                      >
                         Научете повече <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    )}
-                  </CardFooter>
-                </Card>
+                    </CardFooter>
+                  </Card>
+              ))}
+            </div>
+            
+            {/* Additional Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              {services
+                .filter(service => service.id !== activeService && !service.highlight)
+                .map((service) => (
+                  <Card 
+                    key={`additional-${service.id}`}
+                    className="overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all opacity-70 hover:opacity-100"
+                  >
+                    <div className="h-40 overflow-hidden">
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <CardHeader className="py-3">
+                      <CardTitle className="flex items-center gap-2 text-base font-medium text-fr-blue">
+                        {service.icon}
+                        <span>{service.title}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="py-2">
+                      <p className="text-sm text-fr-darkText/80">{service.description}</p>
+                    </CardContent>
+                    <CardFooter className="py-3">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        className="p-0 text-fr-blue hover:text-fr-blue/70 hover:bg-transparent"
+                        onClick={() => setActiveService(service.id)}
+                      >
+                        Научете повече <ArrowRight className="ml-1 h-3 w-3" />
+                      </Button>
+                    </CardFooter>
+                  </Card>
               ))}
             </div>
           </div>

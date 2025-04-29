@@ -9,11 +9,11 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1595475207225-428b62bda831?q=80&w=2000&auto=format&fit=crop"
           alt="Woman with beautiful smile"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-fr-blue/60 to-fr-blue/30 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-fr-blue/70 to-fr-blue/40 backdrop-blur-[2px]"></div>
       </div>
       
       {/* Content */}

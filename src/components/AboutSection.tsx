@@ -34,11 +34,15 @@ const AboutSection = () => {
               Всеки пациент е важен за нас и всяко посещение е комфортно и персонализирано.
             </p>
             
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-fr-blue/20">
-              {["98%", "5,000+", "4.9★"].map((stat, i) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 border-t border-fr-blue/20">
+              {[
+                "98%",
+                "5,000+",
+                "4.9★"
+              ].map((stat, i) => (
                 <motion.div
                   key={stat}
-                  className="text-center p-4 glass-card"
+                  className="text-center p-4 glass-card rounded-xl mb-4 md:mb-0"
                   whileHover={{ scale: 1.06, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

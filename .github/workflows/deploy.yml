@@ -28,7 +28,7 @@ jobs:
       # keep the custom domain
       - run: echo frsmile.com > dist/CNAME
 
-      # upload dist/ as the Pages artifact  (name defaults to “github-pages”)
+      # upload dist/ as the Pages artifact  (name defaults to "github-pages")
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

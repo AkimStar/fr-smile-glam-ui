@@ -2,30 +2,35 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Set this to your default branch if different
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    environment: github-pages      # <- required
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: "npm"
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm ci                # reproducible install
+      - run: npm run build
 
-      - name: Build
-        run: npm run build
+      - run: echo frsmile.com > dist/CNAME   # keep your custom domain
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist 
-          publish_branch: gh-pages
+          path: ./dist
+
+      - uses: actions/deploy-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,7 +10,7 @@ const experts = [
     name: "Д-р Февзи Рюстем",
     title: "Главен Стоматолог",
     description: "С дългогодишен опит, завършил в Украйна. Специализиран във всички видове стоматологични услуги.",
-    image: "/fevzi.png",
+    image: "/fevzi.jpg",
     socials: {
       facebook: "#",
       instagram: "#"

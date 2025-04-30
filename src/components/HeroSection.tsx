@@ -24,9 +24,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-6">
-            Дентална клиника FR Smile
+            Дентален център FR Smile
           </span>
-          <h1 className="heading-xl text-fr-blue mb-6">
+          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-fr-blue mb-6">
             Грижа за вашата <span className="italic text-fr-white">усмивка,</span> гарантирани <span className="italic text-fr-white">решения.</span>
           </h1>
           <p className="text-lg mb-8 text-fr-white/90">

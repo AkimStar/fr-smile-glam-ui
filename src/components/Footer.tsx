@@ -44,8 +44,8 @@ const Footer = () => {
             </p>
             <motion.div whileHover={{ scale: 1.08 }} transition={{ type: 'spring', stiffness: 300 }}>
               <Button 
-                className="bg-white text-fr-blue hover:bg-white/90 rounded-full"
-                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-fr-blue text-white hover:bg-fr-blue/90 rounded-full"
+                onClick={() => window.location.href = 'tel:+359876146960'}
               >
                 Запазете час
               </Button>

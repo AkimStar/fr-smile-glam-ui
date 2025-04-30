@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 const testimonials = [
@@ -57,8 +56,7 @@ const TestimonialsSection = () => {
         </div>
         
         <div className="relative h-[400px] md:h-[450px] flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-fr-lightGray/30 via-transparent to-fr-lightGray/30 rounded-3xl"></div>
-          
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1425px] h-full bg-gradient-to-r from-fr-lightGray/30 via-transparent to-fr-lightGray/30 rounded-3xl"></div>          
           {testimonials.map((testimonial, index) => {
             const isActive = index === activeIndex;
             const isPrev = (index === activeIndex - 1) || (activeIndex === 0 && index === testimonials.length - 1);

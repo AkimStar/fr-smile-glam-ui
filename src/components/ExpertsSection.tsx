@@ -1,6 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StarBorder } from '@/components/ui/star-border';
+import { Button } from '@/components/ui/button';
 
 const experts = [
   {
@@ -83,10 +85,9 @@ const ExpertsSection = () => {
               </div>
               <h3 className="heading-sm mb-2">{expert.name}</h3>
               <p className="text-fr-blue font-medium mb-3">{expert.title}</p>
-              <div className="w-12 h-1 bg-fr-blue/30 rounded-full mb-4"></div>
               <p className="text-fr-darkText/80 mb-6">{expert.description}</p>
               {/* Social links */}
-              <div className="flex items-center space-x-4 mt-auto">
+              <div className="flex items-center space-x-4 mb-6">
                 <motion.a 
                   href={expert.socials.facebook} 
                   whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
@@ -102,6 +103,14 @@ const ExpertsSection = () => {
                   <Instagram size={16} />
                 </motion.a>
               </div>
+              <a href="tel:+359876146960" className="w-full md:w-40 mt-4">
+                <Button
+                  variant="default"
+                  className="btn-primary rounded-full text-white w-full"
+                >
+                  Запази час
+                </Button>
+              </a>
             </motion.div>
           ))}
         </motion.div>

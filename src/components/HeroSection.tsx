@@ -37,7 +37,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="btn-primary text-base font-medium px-8 rounded-full"
-                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.location.href = 'tel:+359876146960'}
               >
                 Запазете час <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

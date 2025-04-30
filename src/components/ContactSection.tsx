@@ -39,7 +39,7 @@ const ContactSection = () => {
             transition={{ duration: 0.7 }}
             whileHover={{ scale: 1.03, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
           >
-            <h3 className="heading-sm text-fr-blue mb-8 text-left">Информация за контакт</h3>
+            <h3 className="heading-left text-fr-blue mb-8 text-left">Информация за контакт</h3>
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">

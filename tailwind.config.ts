@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -73,7 +72,10 @@ export default {
 					darkText: '#222222',
 					lightGray: '#F5F5F5',
 					accentHover: '#DCE4FF',
-				}
+				},
+				gray: {
+					330: '#D1D5DB',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -113,12 +115,22 @@ export default {
 					from: { transform: 'scale(1)', opacity: '1' },
 					to: { transform: 'scale(0.95)', opacity: '0' }
 				},
+				'star-movement-bottom': {
+					'0%': { transform: 'translateX(0) rotate(0deg)' },
+					'100%': { transform: 'translateX(100%) rotate(360deg)' }
+				},
+				'star-movement-top': {
+					'0%': { transform: 'translateX(0) rotate(0deg)' },
+					'100%': { transform: 'translateX(100%) rotate(-360deg)' }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
+				'star-movement-bottom': 'star-movement-bottom linear infinite',
+				'star-movement-top': 'star-movement-top linear infinite'
 			}
 		}
 	},

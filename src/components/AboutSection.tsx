@@ -28,7 +28,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="heading-md text-fr-blue mb-6">Ние създаваме трайни отношения</h3>
+            <h3 className="heading-left text-fr-blue mb-6">Ние създаваме трайни отношения</h3>
             <p className="text-lg mb-8">
               Изграждаме дълготрайни отношения, основани на доверие и грижа. 
               Всеки пациент е важен за нас и всяко посещение е комфортно и персонализирано.

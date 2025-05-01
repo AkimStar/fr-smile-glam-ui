@@ -9,28 +9,28 @@ const services = [
     id: "01",
     title: "Хирургия",
     description: "Професионално извършване на дентално-хирургични процедури с минимален дискомфорт и бързо възстановяване.",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop",
+    image: "/1.png",
     icon: <Scissors className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "02",
     title: "Имплантология",
     description: "Модерни решения за възстановяване на липсващи зъби с висококачествени дентални импланти.",
-    image: "https://plus.unsplash.com/premium_photo-1682097288491-7e926a30cd0b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/2.png",
     icon: <Heart className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "03",
     title: "Ортодонтия",
     description: "Корекция на зъбните редове чрез брекети и алайнери за перфектна усмивка и правилна захапка.",
-    image: "https://plus.unsplash.com/premium_photo-1674998790004-1c08a997011c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/3.png",
     icon: <User className="h-6 w-6 text-fr-blue" />
   },
   {
     id: "04",
     title: "Ортопедично лечение",
     description: "Комплексно лечение на зъбно-челюстната система с цел възстановяване на функцията и естетиката.",
-    image: "https://plus.unsplash.com/premium_photo-1661694196873-034c03440de6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/4.png",
     icon: <Activity className="h-6 w-6 text-fr-blue" />
   }
 ];

@@ -62,7 +62,7 @@ const ContactSection = () => {
                 </div>
                 <div className="text-left">
                   <p className="font-semibold text-fr-darkText">Имейл:</p>
-                  <p className="text-fr-darkText/80">hello@frsmile.bg</p>
+                  <p className="text-fr-darkText/80">info@frsmile.com</p>
                 </div>
               </div>
               
@@ -75,7 +75,7 @@ const ContactSection = () => {
                 </div>
                 <div className="text-left">
                   <p className="font-semibold text-fr-darkText">Адрес:</p>
-                  <p className="text-fr-darkText/80">Център, бул. „Македония" 56, 7500 Силистра</p>
+                  <p className="text-fr-darkText/80">Център, бул. „Македония" 52, 7500 Силистра</p>
                 </div>
               </div>
               
@@ -116,7 +116,7 @@ const ContactSection = () => {
           >
             <iframe 
               title="FR Smile location"
-              src="https://www.google.com/maps?q=Център,+бул.+„Македония“+56,+7500+Силистра&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212.91339401480226!2d27.25941103746534!3d44.11204367937064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01f86f37b4e87%3A0xfdb205fdfe5a20e0!2sSilistra%20Center%2C%20bul.%20%22Makedonia%22%2052%2C%207500%20Silistra%2C%20Bulgaria!5e0!3m2!1sen!2sus!4v1746098852714!5m2!1sen!2sus"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

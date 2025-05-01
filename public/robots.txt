@@ -1,14 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://frsmile.bg/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow specific bots
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: facebookexternalhit
 Allow: /
-
-User-agent: *
-Allow: /
+Crawl-delay: 1

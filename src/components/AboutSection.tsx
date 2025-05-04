@@ -1,5 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+
+// Counter Component
+const Counter = ({ from = 0, to, duration = 3000, suffix = '', decimals = 0 }) => {
+  const [count, setCount] = useState(from);
+  const ref = useRef();
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          let start = null;
+
+          const step = (timestamp) => {
+            if (!start) start = timestamp;
+            const progress = Math.min((timestamp - start) / duration, 1);
+            const value = progress * (to - from) + from;
+            setCount(value); // Always store as number
+            if (progress < 1) requestAnimationFrame(step);
+          };
+
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [from, to, duration]);
+
+  const formattedCount = count.toLocaleString(undefined, {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+
+  return <span ref={ref}>{formattedCount}{suffix}</span>;
+};
 
 const AboutSection = () => {
   return (
@@ -36,12 +78,12 @@ const AboutSection = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 border-t border-fr-blue/20">
               {[
-                "98%",
-                "5,000+",
-                "4.9★"
+                { value: 98, suffix: '%', label: 'Удовлетвореност', decimals: 0 },
+                { value: 5000, suffix: '+', label: 'Трансформации', decimals: 0 },
+                { value: 4.9, suffix: '★', label: 'Рейтинг', decimals: 1 }
               ].map((stat, i) => (
                 <motion.div
-                  key={stat}
+                  key={stat.label}
                   className="text-center p-4 glass-card rounded-xl mb-4 md:mb-0"
                   whileHover={{ scale: 1.06, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
                   initial={{ opacity: 0, y: 30 }}
@@ -49,8 +91,10 @@ const AboutSection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                 >
-                  <p className="text-4xl font-bold text-fr-blue mb-2">{stat}</p>
-                  <p className="text-sm text-fr-darkText/70">{["Удовлетвореност", "Трансформации", "Рейтинг"][i]}</p>
+                  <p className="text-4xl font-bold text-fr-blue mb-2">
+                    <Counter to={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+                  </p>
+                  <p className="text-sm text-fr-darkText/70">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -73,7 +117,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1770&auto=format&fit=crop" 
+                src="/5.jpeg" 
                 alt="Dental procedure" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -87,7 +131,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src="/6.jpeg" 
                 alt="Smiling patient" 
                 className="w-full h-full object-cover rounded-lg"
               />

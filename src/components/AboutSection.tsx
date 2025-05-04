@@ -109,7 +109,7 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
           >
             <motion.div
-              className="glass-card p-2 h-64 animate-float"
+              className="glass-card p-2 h-96 animate-float"
               whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ const AboutSection = () => {
               />
             </motion.div>
             <motion.div
-              className="glass-card p-2 h-64 mt-8 md:mt-16 animate-float"
+              className="glass-card p-2 h-96 mt-8 md:mt-16 animate-float"
               whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

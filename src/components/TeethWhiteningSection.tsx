@@ -5,7 +5,7 @@ const TeethWhiteningSection = () => {
   const [showAfter, setShowAfter] = useState(false);
 
   return (
-    <section className="section-padding bg-white section-divider">
+    <section className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text Block - Left */}
@@ -66,4 +66,4 @@ const TeethWhiteningSection = () => {
   );
 };
 
-export default TeethWhiteningSection; 
+export default TeethWhiteningSection;

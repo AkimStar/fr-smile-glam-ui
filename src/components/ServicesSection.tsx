@@ -37,7 +37,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-padding bg-white section-divider">
+    <section id="services" className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">

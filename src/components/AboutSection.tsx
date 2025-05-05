@@ -45,7 +45,7 @@ const Counter = ({ from = 0, to, duration = 3000, suffix = '', decimals = 0 }) =
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-fr-lightGray to-white section-divider">
+    <section id="about" className="section-padding bg-gradient-to-b from-fr-lightGray to-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">

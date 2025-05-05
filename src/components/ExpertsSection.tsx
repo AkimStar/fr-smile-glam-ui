@@ -12,9 +12,10 @@ const experts = [
     description: "Основател, управител и главен специалист по протетика и хирургия в Дентален център \"FR Smile\". ",
     image: "/fevzi1.jpeg",
     socials: {
-      facebook: "#",
-      instagram: "#"
-    }
+      facebook: "https://www.facebook.com/share/1C7TW2bz6Q/?mibextid=wwXIfr",
+      instagram: "https://www.instagram.com/dr_fryustem?igsh=NDY4bnM5ZTN3ZmFp"
+    },
+    phoneNumber: "+359876146960"
   },
   {
     id: 2,
@@ -23,9 +24,10 @@ const experts = [
     description: "Специалист по детска дентална медицина и естетична медицина в Дентален център \"FR Smile\". ",
     image: "/inna1.jpeg",
     socials: {
-      facebook: "#",
-      instagram: "#"
-    }
+      facebook: "https://www.facebook.com/share/1A55D1XEW9/?mibextid=wwXIfr",
+      instagram: "https://www.instagram.com/innadanailova?igsh=MmdoMHB2bDRhejlj"
+    },
+    phoneNumber: "+359877083898"
   },
   {
     id: 3,
@@ -35,8 +37,9 @@ const experts = [
     image: "/nikolina.jpeg",
     socials: {
       facebook: "#",
-      instagram: "#"
-    }
+      instagram: "https://www.instagram.com/miss_nicole98?igsh=OTJwbmJweWh1cmtj"
+    },
+    phoneNumber: "+359876146960"
   }
 ];
 
@@ -68,7 +71,7 @@ const ExpertsSection = () => {
           </motion.p>
         </div>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16"  // Modified Line
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -88,9 +91,9 @@ const ExpertsSection = () => {
               whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.10)' }}
             >
               <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white/50 mb-6 shadow-lg">
-                <img 
-                  src={expert.image} 
-                  alt={expert.name} 
+                <img
+                  src={expert.image}
+                  alt={expert.name}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -99,22 +102,22 @@ const ExpertsSection = () => {
               <p className="text-fr-darkText/80 mb-6">{expert.description}</p>
               {/* Social links */}
               <div className="flex items-center space-x-4 mb-6">
-                <motion.a 
-                  href={expert.socials.facebook} 
+                <motion.a
+                  href={expert.socials.facebook}
                   whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
                   className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
                 >
                   <Facebook size={16} />
                 </motion.a>
-                <motion.a 
-                  href={expert.socials.instagram} 
+                <motion.a
+                  href={expert.socials.instagram}
                   whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
                   className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
                 >
                   <Instagram size={16} />
                 </motion.a>
               </div>
-              <a href="tel:+359876146960" className="w-full md:w-40 mt-4">
+              <a href={`tel:${expert.phoneNumber}`} className="w-full md:w-40 mt-4">
                 <Button
                   variant="default"
                   className="btn-primary rounded-full text-white w-full"

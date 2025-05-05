@@ -45,7 +45,7 @@ const experts = [
 
 const ExpertsSection = () => {
   return (
-    <section id="experts" className="section-padding bg-gradient-to-b from-white to-fr-lightGray section-divider">
+    <section id="experts" className="section-padding bg-gradient-to-b from-white to-fr-lightGray">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-fr-blue/10 text-fr-blue text-sm font-medium mb-3">

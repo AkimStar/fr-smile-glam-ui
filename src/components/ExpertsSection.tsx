@@ -10,7 +10,7 @@ const experts = [
     name: "Д-р Февзи Рюстем",
     title: "Основател",
     description: "Основател, управител и главен специалист по протетика и хирургия в Дентален център \"FR Smile\". ",
-    image: "/fevzi1.png",
+    image: "/fevzi1.jpeg",
     socials: {
       facebook: "#",
       instagram: "#"
@@ -20,8 +20,19 @@ const experts = [
     id: 2,
     name: "Д-р Инна Данаилова",
     title: "Специалист",
-    description: "Главен специалист по Детска дентална медицина и Естетичната медицина в Дентален център \"FR Smile\". ",
-    image: "/inna.jpg",
+    description: "Специалист по детска дентална медицина и естетична медицина в Дентален център \"FR Smile\". ",
+    image: "/inna1.jpeg",
+    socials: {
+      facebook: "#",
+      instagram: "#"
+    }
+  },
+  {
+    id: 3,
+    name: "Д-р Николина Байрева",
+    title: "Ортодонт",
+    description: "Специалист по ортодонтия(брекети и алайнери) и естетична медицина(филъри, ботокс) в Дентален център \"FR Smile\". ",
+    image: "/nikolina.jpeg",
     socials: {
       facebook: "#",
       instagram: "#"
@@ -57,7 +68,7 @@ const ExpertsSection = () => {
           </motion.p>
         </div>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16"  // Modified Line
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { StarBorder } from '@/components/ui/star-border';
+// Assuming StarBorder is used elsewhere or can be removed if not used in this specific section after modifications.
+// import { StarBorder } from '@/components/ui/star-border';
 import { Button } from '@/components/ui/button';
 
 const experts = [
@@ -36,23 +37,12 @@ const experts = [
     description: "Специалист по ортодонтия(брекети и алайнери) и естетична медицина(филъри, ботокс) в Дентален център \"FR Smile\". ",
     image: "/nikolina.jpeg",
     socials: {
-      facebook: "#",
+      facebook: "#", // Keeps the original facebook link for Nikolina
       instagram: "https://www.instagram.com/miss_nicole98?igsh=OTJwbmJweWh1cmtj"
     },
     phoneNumber: "+359876146960"
-  },
-  {
-    id: 4,
-    name: "Лена Йорданова",
-    title: "Асистент",
-    description: "Отговаря за подготовката на кабинета, стерилизацията и асистирането по време на лечение, за да бъде всяко посещение при нас възможно най-приятно. ",
-    image: "/lena.png",
-    socials: {
-      facebook: "#",
-      instagram: "#"
-    },
-    phoneNumber: "+359876146960"
   }
+  // Expert with ID 4 (Лена Йорданова) has been removed
 ];
 
 const ExpertsSection = () => {
@@ -83,7 +73,7 @@ const ExpertsSection = () => {
           </motion.p>
         </div>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 lg:gap-16"  // Changed to 2 columns
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 lg:gap-16" // Changed to 3 columns for md and lg
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -112,35 +102,38 @@ const ExpertsSection = () => {
               <h3 className="heading-sm mb-2">{expert.name}</h3>
               <p className="text-fr-blue font-medium mb-3">{expert.title}</p>
               <p className="text-fr-darkText/80 mb-6">{expert.description}</p>
-              {/* Social links */}
-              {expert.id !== 4 ? (
-                <>
-                  <div className="flex items-center space-x-4 mb-6">
-                    <motion.a
-                      href={expert.socials.facebook}
-                      whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
-                      className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
-                    >
-                      <Facebook size={16} />
-                    </motion.a>
-                    <motion.a
-                      href={expert.socials.instagram}
-                      whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
-                      className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
-                    >
-                      <Instagram size={16} />
-                    </motion.a>
-                  </div>
-                  <a href={`tel:${expert.phoneNumber}`} className="w-full md:w-40 mt-4">
-                    <Button
-                      variant="default"
-                      className="btn-primary rounded-full text-white w-full"
-                    >
-                      Запази час
-                    </Button>
-                  </a>
-                </>
-              ) : null}
+              
+              {/* Social links and button are now always displayed for all experts in the list */}
+              <>
+                <div className="flex items-center space-x-4 mb-6">
+                  <motion.a
+                    href={expert.socials.facebook}
+                    target="_blank" // Added target blank for external links
+                    rel="noopener noreferrer" // Added rel for security
+                    whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
+                    className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
+                  >
+                    <Facebook size={16} />
+                  </motion.a>
+                  <motion.a
+                    href={expert.socials.instagram}
+                    target="_blank" // Added target blank for external links
+                    rel="noopener noreferrer" // Added rel for security
+                    whileHover={{ scale: 1.15, backgroundColor: '#2563eb', color: '#fff' }}
+                    className="w-8 h-8 rounded-full bg-fr-blue/10 flex items-center justify-center hover:bg-fr-blue hover:text-white transition-all duration-300"
+                  >
+                    <Instagram size={16} />
+                  </motion.a>
+                </div>
+                <a href={`tel:${expert.phoneNumber}`} className="w-full md:w-40 mt-4">
+                  <Button
+                    variant="default"
+                    className="btn-primary rounded-full text-white w-full"
+                  >
+                    Запази час
+                  </Button>
+                </a>
+              </>
             </motion.div>
           ))}
         </motion.div>
